@@ -4,11 +4,19 @@ PS Vita Theme Creator/Editor
 
 
 
-This program is designed to be a user-friendly creator/editor for PS Vita themes as well as including a basic icon set and icon editor.  I've set it up as a standalone .exe so that no .net installs are needed.  
+This program is designed to be a user-friendly creator/editor for PS Vita themes as well as including a basic icon set and icon editor.  I've set it up as a standalone .exe so that no .net installs are needed.
 
 
 
 Note: No image files are provided other than the basic icon set.  You will need to provide/create your own background images among others. There is an Image Reference link the shows you what images are needed and provides filenames, resolution, and file size requirements.
+
+
+
+
+
+
+
+
 
 
 
@@ -20,25 +28,37 @@ Image Editing Software - Needed to create your images.
 
 
 
-Image Compression Tool - https://www.compress2go.com/compress-image    Useful to compress files down to meet file size limits.
+Image Compression Tool - https://www.compress2go.com/compress-image    *Useful to compress files down to meet file size limits.*
 
 
 
-PS Vita Theme Validator - https://psvt.ovh/validator/  Package your created theme into a Zip File and upload it to check for errors.
+PS Vita Theme Validator - https://psvt.ovh/validator/  *Package your created theme into a Zip File and upload it to check for errors.*
 
 
 
-File Packaging - https://www.7-zip.org/  There are others but this is a good one.
+File Packaging - https://www.7-zip.org/  *There are others but this is a good one.*
 
 
 
-Theme Downloader - https://psvt.ovh  I link to this within the program as well, great repo for themes.
+Theme Downloader - https://psvt.ovh  *I link to this within the program as well, great repo for themes.*
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 Image Reference List (Same List provided in the software.)
+
+
 
 Every image file required for a complete PS Vita theme is listed below.
 
@@ -131,12 +151,4 @@ icon\_videos.png              | Video                     | 48x48         | 15KB
 AUDIO
 
 bgm.at9                      | Background music          | AT9 audio     | 4MB      | Sony ATRAC9 format — convert with at9tool
-
-
-
-
-
-
-
-
 
