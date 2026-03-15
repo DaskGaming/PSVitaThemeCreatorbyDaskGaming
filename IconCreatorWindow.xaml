@@ -1,0 +1,374 @@
+<Window x:Class="IconCreatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ThemeEditorWPF"
+        Title="Icon Creator — PS Vita Theme Creator by DaskGaming"
+        Height="700" Width="1100"
+        MinHeight="600" MinWidth="900"
+        WindowState="Maximized"
+        Background="#080808"
+        FontFamily="Segoe UI"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Style x:Key="BtnPrimary" TargetType="Button">
+            <Setter Property="Foreground"      Value="#ffffff"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding"         Value="22,11"/>
+            <Setter Property="FontSize"        Value="13"/>
+            <Setter Property="FontWeight"      Value="SemiBold"/>
+            <Setter Property="Cursor"          Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="GelBase" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#ff9933" Offset="0"/>
+                                        <GradientStop Color="#cc5500" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border CornerRadius="8,8,0,0" Height="12" VerticalAlignment="Top"
+                                    Margin="4,2,4,0" IsHitTestVisible="False">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#80ffffff" Offset="0"/>
+                                        <GradientStop Color="#00ffffff" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="GelBase" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Color="#ffaa44" Offset="0"/>
+                                            <GradientStop Color="#dd6600" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="GelBase" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Color="#aa4400" Offset="0"/>
+                                            <GradientStop Color="#cc5500" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="BtnSecondary" TargetType="Button" BasedOn="{StaticResource BtnPrimary}">
+            <Setter Property="Foreground" Value="#dddddd"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="GelBase" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#484848" Offset="0"/>
+                                        <GradientStop Color="#242424" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border CornerRadius="8,8,0,0" Height="12" VerticalAlignment="Top"
+                                    Margin="4,2,4,0" IsHitTestVisible="False">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                        <GradientStop Color="#50ffffff" Offset="0"/>
+                                        <GradientStop Color="#00ffffff" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="GelBase" Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Color="#585858" Offset="0"/>
+                                            <GradientStop Color="#343434" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="FieldLabel" TargetType="TextBlock">
+            <Setter Property="Foreground"  Value="#e0e0e0"/>
+            <Setter Property="FontSize"    Value="12"/>
+            <Setter Property="FontWeight"  Value="SemiBold"/>
+            <Setter Property="Margin"      Value="0,0,0,6"/>
+        </Style>
+        <Style x:Key="SectionHeader" TargetType="TextBlock">
+            <Setter Property="Foreground"  Value="#ff7d00"/>
+            <Setter Property="FontSize"    Value="10"/>
+            <Setter Property="FontWeight"  Value="Bold"/>
+            <Setter Property="Margin"      Value="0,20,0,12"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <!-- HEADER -->
+        <Border Grid.Row="0" Background="#1c1c1c"
+                BorderThickness="0,0,0,1" BorderBrush="#333333">
+            <Grid Margin="24,0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border Width="5" Height="22" Background="#ff7d00"
+                            CornerRadius="2" Margin="0,0,12,0"/>
+                    <TextBlock Text="Icon Creator" Foreground="#f0f0f0"
+                               FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                    <TextBlock Text="  — PS Vita Theme Creator by DaskGaming"
+                               Foreground="#444444" FontSize="12" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Button HorizontalAlignment="Right" Content="Back to Main"
+                        Style="{StaticResource BtnSecondary}" Padding="16,8"
+                        Click="BtnBackToMain_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- BODY -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="320"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ICON LIST SIDEBAR -->
+            <Border Grid.Column="0" Background="#1c1c1c"
+                    BorderThickness="0,0,1,0" BorderBrush="#333333">
+                <DockPanel Margin="12,16,12,12">
+                    <TextBlock DockPanel.Dock="Top" Text="ICONS" Foreground="#444444"
+                               FontSize="9" FontWeight="Bold" Margin="0,0,0,12"/>
+                    <Button DockPanel.Dock="Bottom" Content="Set Source Folder"
+                            Style="{StaticResource BtnSecondary}" Padding="10,8"
+                            Margin="0,12,0,0" Click="BtnSetSourceFolder_Click"/>
+                    <TextBlock DockPanel.Dock="Bottom" x:Name="TxtSourceFolder"
+                               Foreground="#444444" FontSize="10" TextWrapping="Wrap"
+                               Margin="0,8,0,0" Text="No source folder set"/>
+                    <ScrollViewer DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="IconStackPanel"/>
+                    </ScrollViewer>
+                </DockPanel>
+            </Border>
+
+            <!-- EDITOR CENTRE -->
+            <ScrollViewer Grid.Column="1" Background="#0a0a0a"
+                          VerticalScrollBarVisibility="Auto">
+                <StackPanel Margin="40,32,40,32">
+
+                    <!-- Base icon selector -->
+                    <TextBlock Text="BASE ICON" Foreground="#ff7d00"
+                               FontSize="10" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <TextBlock Foreground="#444444" FontSize="11" Margin="0,0,0,10" TextWrapping="Wrap"
+                               Text="Select an icon from the base set to use as the shape for recoloring."/>
+                    <Grid Margin="0,0,0,28">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox x:Name="CmbBaseIcon"
+                                  Background="#ffffff" Foreground="#111111"
+                                  BorderBrush="#2e2e2e" BorderThickness="1"
+                                  Padding="11,9" FontSize="13" FontWeight="Bold"
+                                  SelectionChanged="CmbBaseIcon_Changed"/>
+                        <Border Grid.Column="1" Width="42" Height="42" Margin="8,0,0,0"
+                                CornerRadius="6" BorderBrush="#2a2a2a" BorderThickness="1"
+                                Background="#111111">
+                            <Image x:Name="ImgBaseIconPreview" Width="36" Height="36"
+                                   Stretch="Uniform"
+                                   RenderOptions.BitmapScalingMode="HighQuality"/>
+                        </Border>
+                    </Grid>
+
+                    <TextBlock x:Name="TxtEditorTitle" Text="Select an icon to edit"
+                               Foreground="#f0f0f0" FontSize="22" FontWeight="Bold"
+                               Margin="0,0,0,4"/>
+                    <TextBlock x:Name="TxtEditorFilename" Foreground="#444444"
+                               FontSize="12" Margin="0,0,0,8"/>
+                    <Border x:Name="InvertedIconHint" Visibility="Collapsed"
+                            Background="#1a1200" BorderBrush="#554400" BorderThickness="1"
+                            CornerRadius="6" Padding="12,9" Margin="0,0,0,20">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="⚠  " Foreground="#ff9933" FontSize="12"
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Foreground="#cc8800" FontSize="11" TextWrapping="Wrap"
+                                       Text="This icon's foreground color change needs to be set before the background color is set to get the best results."/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Preview row -->
+                    <TextBlock Style="{StaticResource SectionHeader}" Text="PREVIEW" Margin="0,0,0,12"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,28">
+                        <!-- Original -->
+                        <StackPanel Margin="0,0,32,0">
+                            <TextBlock Text="Original" Foreground="#555555"
+                                       FontSize="10" Margin="0,0,0,8"/>
+                            <Border Width="128" Height="128" CornerRadius="10"
+                                    BorderBrush="#2a2a2a" BorderThickness="1">
+                                <Image x:Name="ImgOriginal" Width="128" Height="128"
+                                       RenderOptions.BitmapScalingMode="HighQuality"
+                                       Stretch="Uniform"/>
+                            </Border>
+                        </StackPanel>
+                        <!-- Recolored -->
+                        <StackPanel>
+                            <TextBlock Text="Recolored" Foreground="#555555"
+                                       FontSize="10" Margin="0,0,0,8"/>
+                            <Border Width="128" Height="128" CornerRadius="10"
+                                    BorderBrush="#ff7d00" BorderThickness="1">
+                                <Image x:Name="ImgRecolored" Width="128" Height="128"
+                                       RenderOptions.BitmapScalingMode="HighQuality"
+                                       Stretch="Uniform"/>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Color pickers -->
+                    <Grid Margin="0,0,0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Style="{StaticResource SectionHeader}" Text="COLORS" Margin="0,20,0,0"/>
+                        <Button Grid.Column="1" Content="↺  Reset"
+                                Style="{StaticResource BtnSecondary}"
+                                Padding="12,6" VerticalAlignment="Bottom"
+                                Margin="0,0,0,12" Click="BtnResetColors_Click"/>
+                    </Grid>
+                    <TextBlock Style="{StaticResource FieldLabel}" Text="Background (Orange area)"/>
+                    <local:ColorPickerControl x:Name="PickerBg"
+                                              ArgbValue="fff67f00"
+                                              ValueChanged="ColorPicker_Changed"
+                                              Margin="0,0,0,24"/>
+
+                    <TextBlock Style="{StaticResource FieldLabel}" Text="Foreground (White icon shape)"/>
+                    <local:ColorPickerControl x:Name="PickerFg"
+                                              ArgbValue="ffffffff"
+                                              ValueChanged="ColorPicker_Changed"
+                                              Margin="0,0,0,24"/>
+
+                    <!-- Sensitivity controls -->
+                    <TextBlock Style="{StaticResource SectionHeader}" Text="THRESHOLDS"/>
+                    <TextBlock Foreground="#444444" FontSize="11" Margin="0,0,0,12" TextWrapping="Wrap"
+                               Text="Adjust how aggressively each layer is detected. Higher = more pixels replaced."/>
+
+                    <TextBlock Style="{StaticResource FieldLabel}" Text="Background Threshold"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,16">
+                        <Slider x:Name="SliderBgTolerance" Minimum="5" Maximum="140"
+                                Value="60" Width="200" VerticalAlignment="Center"
+                                ValueChanged="Tolerance_Changed" Foreground="#ff7d00"/>
+                        <TextBlock x:Name="TxtBgToleranceVal" Foreground="#666666"
+                                   FontSize="11" VerticalAlignment="Center" Margin="12,0,0,0"/>
+                    </StackPanel>
+
+                    <TextBlock Style="{StaticResource FieldLabel}" Text="Foreground Threshold"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                        <Slider x:Name="SliderFgTolerance" Minimum="5" Maximum="140"
+                                Value="60" Width="200" VerticalAlignment="Center"
+                                ValueChanged="Tolerance_Changed" Foreground="#ff7d00"/>
+                        <TextBlock x:Name="TxtFgToleranceVal" Foreground="#666666"
+                                   FontSize="11" VerticalAlignment="Center" Margin="12,0,0,0"/>
+                    </StackPanel>
+
+                    <!-- Detected colors -->
+                    <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBlock Text="Detected BG:" Foreground="#444444" FontSize="10"
+                                   VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <Border x:Name="DetectedBgSwatch" Width="20" Height="20"
+                                CornerRadius="4" BorderBrush="#333333" BorderThickness="1"
+                                Margin="0,0,16,0"/>
+                        <TextBlock Text="Detected FG:" Foreground="#444444" FontSize="10"
+                                   VerticalAlignment="Center" Margin="0,0,6,0"/>
+                        <Border x:Name="DetectedFgSwatch" Width="20" Height="20"
+                                CornerRadius="4" BorderBrush="#333333" BorderThickness="1"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- RIGHT PANEL: save options -->
+            <Border Grid.Column="2" Background="#111111"
+                    BorderThickness="1,0,0,0" BorderBrush="#2a2a2a">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="16,20,16,16">
+                        <TextBlock Text="SAVE" Foreground="#444444"
+                                   FontSize="9" FontWeight="Bold" Margin="0,0,0,16"/>
+
+                        <TextBlock Foreground="#666666" FontSize="11"
+                                   TextWrapping="Wrap" Margin="0,0,0,16"
+                                   Text="Save the recolored icon to your theme folder, keeping the original filename so the theme picks it up automatically."/>
+
+                        <TextBlock Text="Theme Folder" Foreground="#e0e0e0"
+                                   FontSize="12" FontWeight="SemiBold" Margin="0,0,0,6"/>
+                        <Border Background="#1a1a1a" CornerRadius="6" Padding="10,8"
+                                BorderBrush="#2a2a2a" BorderThickness="1" Margin="0,0,0,12">
+                            <TextBlock x:Name="TxtThemeFolderDisplay"
+                                       Foreground="#555555" FontSize="11"
+                                       TextWrapping="Wrap" Text="Not set"/>
+                        </Border>
+                        <Button Content="Set Theme Folder" Style="{StaticResource BtnSecondary}"
+                                Padding="14,9" HorizontalAlignment="Stretch"
+                                Margin="0,0,0,24" Click="BtnSetThemeFolder_Click"/>
+
+                        <Button x:Name="BtnSaveIcon" Content="Save This Icon"
+                                Style="{StaticResource BtnPrimary}"
+                                Padding="14,10" HorizontalAlignment="Stretch"
+                                Margin="0,0,0,10" IsEnabled="False"
+                                Click="BtnSaveIcon_Click"/>
+
+                        <Button x:Name="BtnSaveAll" Content="Save All Icons"
+                                Style="{StaticResource BtnSecondary}"
+                                Padding="14,10" HorizontalAlignment="Stretch"
+                                Margin="0,0,0,24" IsEnabled="False"
+                                Click="BtnSaveAll_Click"/>
+
+                        <Border x:Name="SaveStatusBorder" Padding="10,9" CornerRadius="6"
+                                Background="#1a1a1a" BorderBrush="#2a2a2a" BorderThickness="1">
+                            <TextBlock x:Name="TxtSaveStatus" Foreground="#555555"
+                                       FontSize="11" TextWrapping="Wrap"
+                                       Text="No icon saved yet."/>
+                        </Border>
+
+                        <!-- All icons preview grid -->
+                        <TextBlock Text="ALL ICONS" Foreground="#444444"
+                                   FontSize="9" FontWeight="Bold" Margin="0,24,0,12"/>
+                        <WrapPanel x:Name="AllIconsPreview" Width="280"/>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+
+        <!-- FOOTER -->
+        <Border Grid.Row="2" Background="#1c1c1c"
+                BorderThickness="0,1,0,0" BorderBrush="#333333">
+            <Grid Margin="24,0">
+                <TextBlock x:Name="TxtFooter" Foreground="#444444" FontSize="11"
+                           VerticalAlignment="Center" Text="Select a source folder and an icon to begin."/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

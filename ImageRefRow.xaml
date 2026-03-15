@@ -1,0 +1,19 @@
+<UserControl x:Class="ImageRefRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Margin="0,0,0,4">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="TxtFileName"   Grid.Column="0" Foreground="#aaaaaa" FontSize="11" FontFamily="Consolas" VerticalAlignment="Center"/>
+        <TextBlock x:Name="TxtUsedFor"    Grid.Column="1" Foreground="#666666" FontSize="11" VerticalAlignment="Center"/>
+        <TextBlock x:Name="TxtResolution" Grid.Column="2" Foreground="#555555" FontSize="11" FontFamily="Consolas" VerticalAlignment="Center"/>
+        <TextBlock x:Name="TxtMaxSize"    Grid.Column="3" Foreground="#555555" FontSize="11" FontFamily="Consolas" VerticalAlignment="Center"/>
+        <TextBlock x:Name="TxtNotes"      Grid.Column="4" Foreground="#3a3a3a" FontSize="10" VerticalAlignment="Center" FontStyle="Italic" TextWrapping="Wrap"/>
+    </Grid>
+</UserControl>
