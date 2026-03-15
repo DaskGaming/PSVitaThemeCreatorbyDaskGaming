@@ -1,0 +1,48 @@
+Image Reference List (Same List provided in the software.)
+
+Every image file required for a complete PS Vita theme is listed below.
+
+FILE NAME                    | USED FOR                  | RESOLUTION    | MAX SIZE | NOTES
+-----------------------------|---------------------------|---------------|----------|----------------------------------------------
+
+LOCKSCREEN
+lockscreen.png               | Lockscreen wallpaper      | 480x272       | 200KB    | Displayed behind clock on lock screen
+preview_lockscreen.png       | Repository preview        | 240x136       | 50KB     | Shown in PS Store / Repository listing
+
+LIVEAREA PAGES (x10)
+bg1.png – bg10.png           | Page background           | 960x544       | 300KB    | Full-res background for each LiveArea page
+bg1t.png – bg10t.png         | Page thumbnail            | 240x136       | 50KB     | Small preview shown in page switcher
+
+NOTIFICATION BAR
+notices.png                  | No notifications icon     | 36x36         | 20KB     | Bell icon when no notices are pending
+notice.png                   | New notification icon     | 36x36         | 20KB     | Bell icon when new notices are present
+
+PAGE INDICATORS
+basePage.png                 | Unselected page dot       | 26x26         | 10KB     | Dot shown for non-active pages
+curPage.png                  | Selected page dot         | 26x26         | 10KB     | Dot shown for the currently active page
+
+HOME & PREVIEW
+preview_page.png             | Home preview              | 480x272       | 200KB    | Theme preview shown in Settings
+preview_thumbnail.png        | Package thumbnail         | 240x136       | 50KB     | Thumbnail in Repository / theme store
+
+APP ICONS (x17)
+icon_web.png                 | Browser                   | 48x48         | 15KB     |
+icon_calendar.png            | Calendar                  | 48x48         | 15KB     |
+icon_photos.png              | Camera / Photos           | 48x48         | 15KB     |
+icon_mail.png                | Email                     | 48x48         | 15KB     |
+icon_friends.png             | Friends                   | 48x48         | 15KB     |
+icon_cma.png                 | Content Manager           | 48x48         | 15KB     |
+icon_messages.png            | Messages                  | 48x48         | 15KB     |
+icon_music.png               | Music                     | 48x48         | 15KB     |
+icon_near.png                | Near                      | 48x48         | 15KB     |
+icon_parental.png            | Parental Controls         | 48x48         | 15KB     |
+icon_party.png               | Party / Voice Chat        | 48x48         | 15KB     |
+icon_ps3link.png             | PS3 Link                  | 48x48         | 15KB     |
+icon_ps4link.png             | PS4 Link                  | 48x48         | 15KB     |
+icon_power.png               | Power                     | 48x48         | 15KB     |
+icon_settings.png            | Settings                  | 48x48         | 15KB     |
+icon_trophies.png            | Trophies                  | 48x48         | 15KB     |
+icon_videos.png              | Video                     | 48x48         | 15KB     |
+
+AUDIO
+bgm.at9                      | Background music          | AT9 audio     | 4MB      | Sony ATRAC9 format — convert with at9tool

@@ -1,0 +1,160 @@
+User Guide--
+
+Note: You will have to source your image files for your theme,  you can created these or download existing themes from within the program.   
+
+
+Useful External Tools:
+
+Image Editing Software - Needed to create your images.
+
+Image Compression Tool - https://www.compress2go.com/compress-image    Useful to compress files down to meet file size limits.
+
+PS Vita Theme Validator - https://psvt.ovh/validator/  Package your created theme into a Zip File and upload it to check for errors.
+
+File Packaging - https://www.7-zip.org/  There are others but this is a good one.
+
+Theme Downloader - https://psvt.ovh  I link to this within the program as well, great repo for themes.
+
+Custom Themes Manager - App for the Vita to install and manage custom themes on the Vita, require modded Vita with custom firmware. 
+
+
+Main Menu:
+Once you open the program you will be greeted with the main menu,  the layout is set up to track your steps on the left, preview on the right, and work area in the middle.  
+
+Select from one of the options:
+Create New Theme - This allows you to create an theme entirely from scratch selecting everything as you go.
+
+Edit Existing Theme - This allows you to import an existing them and change any option.
+
+Download a Theme - Links to https://psvt.ovh/ where you can search and download theme.
+
+Create Icons - Basic Icon Creator that creates 2 color icons for all stock Vita apps.
+
+Image Reference:  Useful tool when creating your theme images with information on file name, file size and resolution.
+
+
+
+CREATE A NEW THEME 
+(Edit Existing Theme is exactly the same as Create a Theme with the exception that everything is filled in already)
+
+*Note: You may want to run the Icon Creator first if you want to use custom colors of the default icons.*
+
+
+Theme Setup
+
+To create your theme we first have to give it a name.  This is what will be displayed in the Vita Theme Menu and the repository if you decide to upload your theme.  
+
+For Author, this is you!  The check box item will fill in language variants automatically in the finished xml document.
+
+Theme Folder is where your theme is going to be saved. Select where you want this Folder to reside. 
+
+Content Version is whatever version of your theme you want it to be.
+
+Click Save & Continue to move to the next step,
+
+
+Lock Screen
+
+Lockscreen Image is the background image that will show when you fist power on the Vita. (lockscreen.png, 480x272 200KB)
+
+Clock color changes what color the text of the clock displays as.  You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Clock position can be set to 0 - Lower Left, 1 - Upper Left, or 2 Lower Right, position is shown in preview window on the right.
+
+Bar Background is the color of the top bar on the lockscreen. You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Border Color changes the color of the outline over you background image on the lockscreen.  You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Font Color changes the color of the font on the top bar on the lockscreen. You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Lockscreen Preview is an image of what your lock screen will look like,  I usually set this after making the Theme and installing it, I then take a screenshot on the Vita by pressing the PS button and the Start button at the same time, if done correctly the screen should flash.  I then download to my pc and set it by editing my Theme.
+
+
+Notification Bar
+
+Bar Background sets the color of the top bar on the Vita menu pages.  You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Icon color sets the color of the icons that show up on the top bar in the Vita menu pages. You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Text Color sets the color of the text on the top bar in the Vita menu pages. You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Icon Glow Color sets the color of the icon that is currently active on the top bar in the Vita menu pages. You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+No-Notice Icon replaces the top right icon for notifications on the Vita.  This displays when there is no new notifications. (notices.png, 36x36, 20KB)
+
+New-Notice Icon replaces the top right icon for notifications on the Vita.  This displays when there is a new notifications.
+(notice.png, 36x36, 20KB)
+
+Click Save & Continue
+
+
+Page Backgrounds
+
+On the Vita there are 10 menu pages available and you can set a background for each.
+
+First, select which page to work with out of the 10 in the drop down menu.
+
+Background Image sets the background for whichever Vita menu page you are working on. (bg1.png – bg10.png, 960x544, 300KB)
+
+Thumbnail Image is the thumbnail of the background image you set in the previous step.  (bg1t.png – bg10t.png, 240x136, 50KB)
+
+Wave type sets the stock background "wave" color.  This is the factory wallpapers for the vita and is still viewable when swiping between menu pages on the Vita.  I wasn't able to find an accurate list to color resource but you can use the Vita to see the colors.
+
+Bubble Font sets the color of the bubble icon text.  This is the text that is show under each bubble. You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Font Shadow is the shadow under the font for the bubble text, on (1) or (0).
+
+Click Save &  Continue once you've set as many pages up as you'd like, You do not need to set up all 10.  I would recommend it if you add games to the menu often.
+
+
+App Icons
+
+On this step you can  either upload an entire icon set from a folder on your pc (useful if you used the icon creator to make an icon set) or you can import the icons individually.
+
+Bulk Import will import an icon set from a file on your PC.
+
+All of the next Items are the individual icons used for factory apps on the Vita.
+
+Home & Misc.
+
+Unselected Page Indicator is the circles on the left of the Vita menu that denotes menu pages.  This is an image file rather than a configurable color.  (basePage.png, 26x26, 10KB)
+
+Selected Page Indicator is the highlighted circle on the left of the Vita menu that indicates which menu page your on.  This is an image file rather than a configurable color. (curPage.png, 26x26, 10KB)
+
+Background Music File - The Vita uses an AT9 format music file for the background music on the menu pages. You can add that file here.
+
+Home Preview Image is a preview showing what your menu would look like as it is on the Vita. Again, I usually set this after making the Theme and installing it, I then take a screenshot on the Vita by pressing the PS button and the Start button at the same time, if done correctly the screen should flash.  I then download to my pc and set it by editing my Theme.
+
+Package Thumbnail Image is a preview image used as the "cover" to your theme, it'll show up on the Theme menu on the Vita.
+
+Once all is set, click Finish.
+
+You will now see a screen asking you to choose between Open the folder of the Theme you created or Start Another Theme to go back to the Main Menu.
+
+
+ICON CREATOR
+
+You can adjust the color of the supplied icons (recommended) or upload your own 2 color icon set with orange being background and white being foreground and then import it with Set Source Folder on the lower left. I haven't tested this feature as much and the color adjustment may not work with some icons depending on where the colors are in the image.
+
+Base Icon selects the which icon to edit.  The drop down contains every Vita factory app icon.
+
+Preview shows a before and after view of the icon as you edit the colors.
+
+*Note - On the PS3 and PS4 icons you need to set the Foreground color before the background color to get desired results.  It has something to do with the icons I used and I am working on it.*
+
+Background is the Orange color in the sample icon.  You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Foreground  is the White color in the sample icon.  You can input an AARRGGBB color code or click the radial button on the right to access a color wheel.
+
+Threshholds allow you to adjust the sensitivity of the color replacement on the icons adjusted and is more useful if you supplied your own two icon set.  If using supplied icons leave as is.
+
+Once finished click Set Theme Folder on the right to select where your Theme Set will be saved.
+
+Now you can either save the icon you are currently working on or save the entire set in the selected folder.
+
+Click Back to Main in the top right to go to the Main Menu.
+
+IMAGE REFERENCE
+
+This opens a screen with all the information for the images and music needed to build a complete theme.  This information is also provided in a .txt doc included with the files.
+
