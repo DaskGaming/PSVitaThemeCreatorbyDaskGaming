@@ -1,0 +1,5 @@
+﻿Disclaimer
+
+This program came about after hand-coding the .xml document for a PS Vita theme and realizing that a program like this would be the perfect project to get back into software development.  I used Claude AI to “‘vibe code” the project with the intended goal to use it as a learning tool to get back into software development.  I am going through the code and adjusting things and making changes.  The next release will be the final version and should be nice and polished.
+
+That being said, this is a fully functional program and, if you do your part with the images, you will end up with a working theme that will pass validation.
